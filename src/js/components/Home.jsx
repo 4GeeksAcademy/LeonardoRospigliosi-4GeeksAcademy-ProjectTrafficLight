@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
+import Semaforo from "./Semaforo.jsx";
 
 //create your first component
 const Home = () => {
@@ -39,8 +39,11 @@ const Home = () => {
 
 	return (
 		<div className="text-center">
+			<Semaforo />
 
 
+
+			<h2>Otros Practicando en Clase</h2>
 			<p>Nombre: {nombre}</p>
 			<p>Edad: {edad}</p>
 			<p>Contador: {contador}</p>
@@ -50,21 +53,14 @@ const Home = () => {
 			<button onClick={() => { setContador(contador - 1) }}>Decrementar</button>
 
 			<div className={`mt-5 ${claseCSS}`} >
-				<div className={`bg-danger ${seleccionado == 'bg-danger' ? 'text-white' : ''}`} onClick={() => { setSeleccionado("bg-danger") }}>LUZ ROJA</div>
+				<div className={`bg-danger ${seleccionado == 'bg-danger' ? 'text-white' : ''}`}
+					onClick={() => { setSeleccionado("bg-danger") }}>LUZ ROJA</div>
 
 				<div className={`bg-warning ${seleccionado == 'bg-warning' ? 'text-white' : ''}`} onClick={() => { setSeleccionado("bg-warning") }}>LUZ AMARILLA</div>
 
 				<div className={`bg-success ${seleccionado == 'bg-success' ? 'text-white' : ''}`} onClick={() => { setSeleccionado("bg-success") }}>LUZ VERDE</div>
 			</div>
 
-
-			{/* <div>
-				<button onClick={() => { setClaseCSS('bg-danger') }}>Cambiar background a rojo</button>
-				<br />
-				<button onClick={() => { setClaseCSS('bg-warning') }}>Cambiar background a amarillo</button>
-				<br />
-				<button onClick={() => { setClaseCSS('bg-success') }}>Cambiar background a verde</button>
-			</div> */}
 		</div>
 	);
 };
